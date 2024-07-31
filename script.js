@@ -18,7 +18,8 @@ const GPUs = {
     "GTX 1050 Ti": { Marca: "NVidea", quantidade: 0, Max: 10, preco: 800, MHz: 1100 },
     "GTX 1060": { Marca: "NVidea", quantidade: 0, Max: 10, preco: 900, MHz: 1300 },
     "GTX 1070": { Marca: "NVidea", quantidade: 0, Max: 10, preco: 3000, MHz: 2000 },
-    "GTX 1080": { Marca: "NVidea", quantidade: 0, Max: 10, preco: 3500, MHz: 3000 }
+    "GTX 1080": { Marca: "NVidea", quantidade: 0, Max: 10, preco: 3500, MHz: 3000 },
+    "RTX 2060": { Marca: "NVidea", quantidade: 0, Max: 10, preco: 2200, MHz: 1900 }
 };
 
 const inventário = {
