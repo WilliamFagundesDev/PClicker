@@ -128,7 +128,7 @@ function gerarHTMLGPUs(sortedGPUs) {
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
         imgDiv.innerHTML = `
-            <img class="imgGPU" src="../GPUFotos/${placa.replace(/ /g, '').toLowerCase()}.png" alt="${placa}">
+            <img class="imgGPU" src="./GPUFotos/${placa.replace(/\s+/g, '')}.png" alt="${placa}">
         `;
         
         shopItemGPU.appendChild(textoDiv);
@@ -262,16 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function escolherPlacaPorRaridade() {
-    // Converte o inventário em um array de entradas [nome, dados]
     const placas = Object.entries(inventário);
-    
-    // Calcula o total de raridade para ajudar na escolha ponderada
     const totalRaridade = placas.reduce((acc, [, { raridade }]) => acc + raridade, 0);
-    
-    // Gera um número aleatório
     let random = Math.random() * totalRaridade;
-    
-    // Seleciona a placa com base na raridade
     for (const [nome, { raridade }] of placas) {
         if (random < raridade) {
             return nome;
@@ -279,6 +272,7 @@ function escolherPlacaPorRaridade() {
         random -= raridade;
     }
 }
+
 
 function adicionarPlacaAoInventário() {
     const placaEscolhida = escolherPlacaPorRaridade();
@@ -320,7 +314,7 @@ function atualizarInventarioPopup() {
     for (const [nome, { raridade, quantidade }] of Object.entries(inventário)) {
         for (let i = 0; i < quantidade; i++) {
             const img = document.createElement('img');
-            img.src = `../GPUFotos/${nome.replace(/ /g, '').toLowerCase()}.png`;
+            img.src = `./GPUFotos/${nome.replace(/\s+/g, '')}.png`;
             img.alt = nome;
             img.className = `PlacasInv${raridade}`; // Define a classe com base na raridade
             
@@ -354,9 +348,6 @@ function atualizarInventarioPopup() {
         }
     }
 }
-
-
-
 
 // Abre o popup
 document.getElementById('invbtn').addEventListener('click', () => {
