@@ -1,4 +1,4 @@
-let clickCount = 10000;
+let clickCount = 0;
 let incrementValue = 1;
 let upgradeCost = 1000;
 let multiplier = 1;
@@ -40,6 +40,7 @@ const mhzSpeedElement = document.getElementById('mhzSpeed');
 const DinheiroSpeedElement = document.getElementById('DinheiroSpeed');
 const progressBar = document.getElementById('progress-bar');
 const progressTimeValue = document.getElementById('progress-time-value');
+const delbtn = document.getElementById('delbtn');
 
 // Função para atualizar a exibição de cliques
 function updateClickDisplay() {
@@ -126,7 +127,7 @@ function gerarHTMLGPUs(sortedGPUs) {
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
         imgDiv.innerHTML = `
-            <img class="imgGPU" src="GPUFotos/${placa.replace(/ /g, '').toLowerCase()}.png" alt="${placa}">
+            <img class="imgGPU" src="../GPUFotos/${placa.replace(/ /g, '').toLowerCase()}.png" alt="${placa}">
         `;
         
         shopItemGPU.appendChild(textoDiv);
@@ -318,7 +319,7 @@ function atualizarInventarioPopup() {
     for (const [nome, { raridade, quantidade }] of Object.entries(inventário)) {
         for (let i = 0; i < quantidade; i++) {
             const img = document.createElement('img');
-            img.src = `GPUFotos/${nome.replace(/ /g, '').toLowerCase()}.png`;
+            img.src = `../GPUFotos/${nome.replace(/ /g, '').toLowerCase()}.png`;
             img.alt = nome;
             img.className = `PlacasInv${raridade}`; // Define a classe com base na raridade
             
@@ -415,4 +416,14 @@ setInterval(salvarDados, 60000); // Salva os dados a cada 60 segundos
 document.addEventListener('DOMContentLoaded', () => {
     carregarDados(); // Carrega os dados do jogo
     updateProgressBar(); // Inicia a barra de progresso
+});
+
+function clearLocalStorage() {
+    localStorage.clear();
+    console.log("Todo o localStorage foi apagado.");
+}
+
+delbtn.addEventListener('click', () => {
+    clearLocalStorage();
+    alert("Conta toda apagada");
 });

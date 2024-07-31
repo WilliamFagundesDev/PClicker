@@ -207,3 +207,7 @@ button:active {
     white-space: nowrap;
     z-index: 1000;
 }
+
+#delbtn{
+    background-color: red;
+}
