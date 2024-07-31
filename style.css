@@ -1,0 +1,209 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+button:active {
+    background-color: #0056b3;
+}
+
+.shop-container {
+    margin-top: 100px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 80vh; /* Limita a altura máxima da loja */
+    overflow-y: auto; /* Permite rolagem vertical na loja */
+    max-height: 700px;
+}
+
+.shop-item {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.shop-item-GPU {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+}
+
+.shop-item p {
+    margin: 5px 0;
+}
+
+#PCFoto{
+    width: 300px;
+}
+
+.imgGPU{
+    width: 200px;
+    margin-left: 10px;
+}
+
+/* Personaliza a barra de rolagem para navegadores WebKit */
+.shop-container::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.shop-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do trilho de rolagem */
+    border-radius: 10px; /* Cantos arredondados do trilho */
+}
+
+.shop-container::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do polegar de rolagem */
+    border-radius: 10px; /* Cantos arredondados do polegar */
+}
+
+.shop-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do polegar quando o cursor está sobre ele */
+}
+
+/* Para outros navegadores, use estilos básicos para o scroll */
+.shop-container {
+    scrollbar-color: #888 #f1f1f1; /* Cor do polegar e do trilho para Firefox */
+    scrollbar-width: thin; /* Largura fina da barra de rolagem */
+}
+
+/* Estilos para a barra de progresso */
+#progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    margin: 10px 0;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+#progress-time {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Estilos do Popup */
+.popup {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); /* Fundo com opacidade */
+}
+
+/* Conteúdo do Popup */
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do popup */
+    max-width: 600px; /* Largura máxima */
+}
+
+/* Fechar botão */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Imagens no Inventário */
+.inventario-fotos img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    display: inline-block;
+}
+.PlacasInv50{
+    border: 3px solid rgb(119, 119, 119);
+    border-radius: 20px;
+}
+.PlacasInv40{
+    border: 3px solid rgb(121, 196, 0);
+    border-radius: 20px;
+}
+.PlacasInv30{
+    border: 3px solid rgb(19, 76, 182);
+    border-radius: 20px;
+}
+.PlacasInv20{
+    border: 3px solid rgb(156, 19, 168);
+    border-radius: 20px;
+}
+.PlacasInv10{
+    border: 3px solid rgb(255, 208, 0);
+    border-radius: 20px;
+}
+
+/* Estilos para o Tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PClicker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="PClogo.png" type="image/png">
+</head>
+
+<body>
+    <div class="flex">
+        <div class="container">
+            <h1>MarujoCoin: <span id="clickCount">0</span></h1>
+            <button id="clickButton">
+                <img src="./PCFotos/PC1.png" id="PCFoto" alt="PC Foto">
+            </button>
+            <p id="mhzSpeed"></p>
+            <p id="DinheiroSpeed"></p>
+            <!-- Barra de progresso -->
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progress-time">Tempo restante: <span id="progress-time-value">5</span> segundos</p>
+            <div class="shop-item">
+                <!-- Botão de Inventário -->
+                <button id="invbtn">Inventário</button>
+
+                <!-- Popup do Inventário -->
+                <div id="inventarioPopup" class="popup">
+                    <div class="popup-content">
+                        <span id="closeBtn" class="close">&times;</span>
+                        <h2>Inventário</h2>
+                        <div id="inventarioFotos" class="inventario-fotos"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shop-container">
+            <h2>Loja</h2>
+            <div class="shop-item">
+                <p>
+                <h3>Comprar Computador</h3>
+                </p>
+                <p>Aumenta em 5 o máximo de placas de vídeo</p>
+                <button id="upgradeButton">Upgrade (Custo: 1000)</button>
+            </div>
+        </div>
+
+        <div class="shop-container">
+            <h2>Loja GPU</h2>
+            <label for="sortOptions">Ordenar por:</label>
+            <select id="sortOptions">
+                <option value="marca">Marca</option>
+                <option value="preco">Preço</option>
+                <option value="nome">Nome</option>
+                <option value="mhz">MHZ</option>
+            </select>
+            <div id="shopContainer">
+                <!-- O conteúdo será adicionado dinamicamente aqui -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
